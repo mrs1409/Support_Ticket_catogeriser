@@ -6,20 +6,32 @@ const API = import.meta.env.VITE_API_URL || 'https://support-ticket-catogeriser.
 export default function ModelInfo() {
   const [info, setInfo]   = useState(null)
   const [error, setError] = useState('')
+  const [waking, setWaking] = useState(false)
 
-  useEffect(() => {
-    axios.get(`${API}/model-info`)
-      .then(r => setInfo(r.data))
-      .catch(() => setError('Cannot reach API. Is uvicorn running on port 8000?'))
-  }, [])
+  const fetchInfo = () => {
+    setError('')
+    setWaking(false)
+    // 15s timeout to handle Render free-tier cold start (~30s)
+    const timer = setTimeout(() => setWaking(true), 5000)
+    axios.get(`${API}/model-info`, { timeout: 60000 })
+      .then(r => { clearTimeout(timer); setInfo(r.data) })
+      .catch(() => { clearTimeout(timer); setError('Cannot reach backend API. The Render server may be waking up — wait 30s and try again.') })
+  }
 
-  if (error) return <div className="card glass error-msg">{error}</div>
-  if (!info)  return (
+  useEffect(() => { fetchInfo() }, [])
+
+  if (error) return (
+    <div className="card glass error-msg" style={{ textAlign: 'center', padding: 32 }}>
+      <p>{error}</p>
+      <button className="btn-primary" style={{ marginTop: 16 }} onClick={fetchInfo}>🔄 Retry</button>
+    </div>
+  )
+  if (!info) return (
     <div className="card glass" style={{ textAlign: 'center', color: 'var(--text-muted)', padding: 48 }}>
       <span className="spinner" style={{ borderTopColor: 'var(--accent)',
         borderColor: 'rgba(203,190,176,0.5)', width: 28, height: 28,
         borderWidth: 3 }} />
-      <p style={{ marginTop: 16 }}>Loading model info…</p>
+      <p style={{ marginTop: 16 }}>{waking ? '⏳ Waking up backend server… (free tier, ~30s)' : 'Loading model info…'}</p>
     </div>
   )
 
