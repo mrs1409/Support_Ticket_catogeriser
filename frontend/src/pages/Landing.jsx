@@ -5,6 +5,10 @@ const scrollTo = (id) => (e) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
+// Points to Render backend in prod, localhost in dev
+const BACKEND = (import.meta.env.VITE_API_URL || 'http://localhost:8000/api')
+  .replace('/api', '')
+
 const FEATURES = [
   {
     icon: '🧠',
@@ -68,7 +72,7 @@ export default function Landing() {
           <div className="landing-nav-links">
             <a className="landing-nav-link" href="#features" onClick={scrollTo('features')}>Features</a>
             <a className="landing-nav-link" href="#how-it-works" onClick={scrollTo('how-it-works')}>How it works</a>
-            <a className="landing-nav-link" href="/docs" target="_blank" rel="noreferrer">API Docs</a>
+            <a className="landing-nav-link" href={`${BACKEND}/docs`} target="_blank" rel="noreferrer">API Docs</a>
           </div>
           <button className="btn-primary nav-cta" onClick={() => navigate('/dashboard')}>
             Launch Dashboard →
@@ -96,7 +100,7 @@ export default function Landing() {
             <button className="btn-primary" onClick={() => navigate('/dashboard')}>
               🚀 Try it now
             </button>
-            <a className="btn-secondary" href="/docs" target="_blank" rel="noreferrer">
+            <a className="btn-secondary" href={`${BACKEND}/docs`} target="_blank" rel="noreferrer">
               View API Docs
             </a>
           </div>
@@ -232,7 +236,7 @@ export default function Landing() {
       <footer className="landing-footer">
         <span>© {new Date().getFullYear()} TicketSense — built with FastAPI, React &amp; scikit-learn</span>
         <div className="landing-footer-links">
-          <a href="/docs" target="_blank" rel="noreferrer">API Docs</a>
+          <a href={`${BACKEND}/docs`} target="_blank" rel="noreferrer">API Docs</a>
           <a href="#features" onClick={scrollTo('features')}>Features</a>
           <a href="#how-it-works" onClick={scrollTo('how-it-works')}>How it works</a>
         </div>

@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import axios from 'axios'
 
-const API = '/api'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:8000/api'
 
 export default function BatchUpload() {
   const [file, setFile]       = useState(null)

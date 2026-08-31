@@ -3,7 +3,7 @@ import axios from 'axios'
 import UrgencyBadge from './UrgencyBadge'
 import ConfidenceBar from './ConfidenceBar'
 
-const API = '/api'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:8000/api'
 
 const EXAMPLES = [
   {
