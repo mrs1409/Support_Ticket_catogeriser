@@ -6,7 +6,7 @@ const scrollTo = (id) => (e) => {
 }
 
 // Points to Render backend in prod, localhost in dev
-const BACKEND = (import.meta.env.VITE_API_URL || 'http://localhost:8000/api')
+const BACKEND = (import.meta.env.VITE_API_URL || 'https://support-ticket-catogeriser.onrender.com/api')
   .replace('/api', '')
 
 const FEATURES = [

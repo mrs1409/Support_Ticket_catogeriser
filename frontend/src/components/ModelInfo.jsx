@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:8000/api'
+const API = import.meta.env.VITE_API_URL || 'https://support-ticket-catogeriser.onrender.com/api'
 
 export default function ModelInfo() {
   const [info, setInfo]   = useState(null)
