@@ -13,7 +13,7 @@
 **Automatically route, triage, and prioritise IT support tickets using Machine Learning.**  
 Trained on 47,837 real service-desk tickets · 86.48% accuracy · 8 categories · REST API + React dashboard
 
-[🚀 Live Demo](https://support-ticket-catogeriser.vercel.app) &nbsp;·&nbsp; [📖 API Docs](https://support-ticket-catogeriser.onrender.com/docs) &nbsp;·&nbsp; [🛠 Run Locally](#running-locally)
+[🚀 Live Demo](https://support-ticket-catogeriser.vercel.app) &nbsp;·&nbsp; [📖 API Docs](https://support-ticket-catogeriser.onrender.com/docs) &nbsp;
 
 </div>
 
