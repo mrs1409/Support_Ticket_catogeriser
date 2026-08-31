@@ -1,0 +1,34 @@
+# Tell Vercel to ignore all Python/backend files.
+# This is a FRONTEND-ONLY Vercel deployment.
+# The FastAPI backend runs separately on Render.com
+
+# Python serverless function (not used — backend is on Render)
+api/
+
+# Python dependencies — causes 300MB bundle error on Vercel
+requirements.txt
+
+# Backend source (not needed for frontend build)
+backend/
+predict.py
+data_utils.py
+urgency.py
+train.py
+get_data.py
+generate_training_data.py
+download_data.py
+
+# Trained model (4MB pkl — served by Render, not Vercel)
+models/
+
+# Training artefacts
+assets/confusion_matrix.png
+assets/model_comparison.csv
+data/
+
+# Misc
+notebooks/
+writeup/
+__pycache__/
+*.pyc
+AGENT_PROMPT_SupportTicketClassifier.md
