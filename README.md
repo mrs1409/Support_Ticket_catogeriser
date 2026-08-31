@@ -7,26 +7,15 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-2.0-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)](https://scikit-learn.org)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
+[![Vercel](https://img.shields.io/badge/Frontend-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://support-ticket-catogeriser.vercel.app)
+[![Render](https://img.shields.io/badge/Backend-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://support-ticket-catogeriser.onrender.com)
 
 **Automatically route, triage, and prioritise IT support tickets using Machine Learning.**  
 Trained on 47,837 real service-desk tickets · 86.48% accuracy · 8 categories · REST API + React dashboard
 
-[🚀 Live Demo](#) &nbsp;·&nbsp; [📖 API Docs](#api-reference) &nbsp;·&nbsp; [🛠 Run Locally](#running-locally)
+[🚀 Live Demo](https://support-ticket-catogeriser.vercel.app) &nbsp;·&nbsp; [📖 API Docs](https://support-ticket-catogeriser.onrender.com/docs) &nbsp;·&nbsp; [🛠 Run Locally](#running-locally)
 
 </div>
-
----
-
-## 📸 Screenshots
-
-| Landing Page | Dashboard — Classify |
-|---|---|
-| ![Landing](assets/screenshots/landing.png) | ![Dashboard](assets/screenshots/dashboard.png) |
-
-| All Category Scores | Model Info & Confusion Matrix |
-|---|---|
-| ![Scores](assets/screenshots/scores.png) | ![Model](assets/screenshots/model_info.png) |
 
 ---
 
